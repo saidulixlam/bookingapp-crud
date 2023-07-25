@@ -20,12 +20,10 @@ function onSubmit(e) {
         number,
         email
     };
-    axios.post
-        ("https://crudcrud.com/api/9b7a2e5e2e1f4937863371237e562f0c/bookingdata"
-            , obj)
+    axios.post("https://crudcrud.com/api/10fca1db34ab4af0b91cd3e99c1a243f/bookingdata",obj)
         .then((res) => {
             showInput(res.data)
-            console.log(res);
+            //console.log(res);
         })
         .catch((err) => {
             console.log(err);
@@ -36,7 +34,7 @@ function onSubmit(e) {
     emailInput.value = '';
 }
 window.addEventListener("DOMContentLoaded", () => {
-    axios.get("https://crudcrud.com/api/9b7a2e5e2e1f4937863371237e562f0c/bookingdata")
+    axios.get("https://crudcrud.com/api/10fca1db34ab4af0b91cd3e99c1a243f/bookingdata")
         .then((res) => {
             for (let i = 0; i < res.data.length; i++) {
                 showInput(res.data[i])
@@ -73,12 +71,12 @@ function showInput(obj) {
     {
         // parent.removeChild(li);
         // localStorage.removeItem(obj.email);
-        // axios.delete("https://crudcrud.com/api/9b7a2e5e2e1f4937863371237e562f0c/bookingdata")
-        //     .then((res) => {
-        //         console.log(res.data);
-        //     }).catch((err) => {
-        //         console.log(err.msg);
-        //     })
+        axios.delete("https://crudcrud.com/api/10fca1db34ab4af0b91cd3e99c1a243f/bookingdata")
+            .then((res) => {
+                console.log(res.data);
+            }).catch((err) => {
+                console.log(err.msg);
+            })
     }
 
     //edit button funtion
