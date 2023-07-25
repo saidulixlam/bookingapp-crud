@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS For Beginners</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>SIGN IN FORM</h1>
+    </header>
+    <section class="container">
+        <form id="my-form">
+            <h1>Add User</h1>
+            <div class="msg"></div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" required>
+            </div>
+            <div>
+                <label for="number">Phone No:</label>
+                <input type="number" id="number" required>
+            </div>
+            <input class="btn" type="submit" value="Submit">
+        </form>
+    </section>
+    <section class="container2" id="newbox">
+        <ul id="newlist">
+        </ul>
+    </section>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
+    </script>
+</body>
+
+</html>
