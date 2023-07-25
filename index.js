@@ -35,6 +35,16 @@ function onSubmit(e) {
     numberInput.value = '';
     emailInput.value = '';
 }
+window.addEventListener("DOMContentLoaded", () => {
+    axios.get("https://crudcrud.com/api/9b7a2e5e2e1f4937863371237e562f0c/bookingdata")
+        .then((res) => {
+            for (let i = 0; i < res.data.length; i++) {
+                showInput(res.data[i])
+            }
+        }).catch((err) => {
+            console.log(err);
+        })
+})
 function showInput(obj) {
     const parent = document.getElementById('newlist');
     const li = document.createElement('li');
@@ -58,13 +68,19 @@ function showInput(obj) {
     parent.appendChild(li);
 
     //delete button function
-    btn.addEventListener('click', removeItem);
+    btn.addEventListener('click',removeItem)
     function removeItem() 
     {
-        parent.removeChild(li);
-        localStorage.removeItem(obj.email);
+        // parent.removeChild(li);
+        // localStorage.removeItem(obj.email);
+        // axios.delete("https://crudcrud.com/api/9b7a2e5e2e1f4937863371237e562f0c/bookingdata")
+        //     .then((res) => {
+        //         console.log(res.data);
+        //     }).catch((err) => {
+        //         console.log(err.msg);
+        //     })
     }
-   
+
     //edit button funtion
     editbtn.addEventListener('click', editFun);
 
